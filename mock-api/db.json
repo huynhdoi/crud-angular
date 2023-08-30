@@ -1,0 +1,254 @@
+{
+  "crud": [
+    {
+      "food": "Apple",
+      "foodCategory": "Fruit",
+      "amount": 10,
+      "madeIn": "China",
+      "promotion": [
+        {
+          "voucher": [
+            {
+              "code": "QWDAS",
+              "company": "FPT"
+            },
+            {
+              "code": "QWEACASQW",
+              "company": "CMC"
+            }
+          ],
+          "percent": "50"
+        },
+        {
+          "voucher": "WGASD",
+          "percent": "45"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "id": 2,
+      "food": "Pork",
+      "foodCategory": "Meat",
+      "amount": 1,
+      "promotion": [
+        {
+          "voucher": [
+            {
+              "code": "QWDAS",
+              "company": "FPT"
+            },
+            {
+              "code": "QWEACASQW",
+              "company": "CMC"
+            }
+          ],
+          "percent": "50"
+        },
+        {
+          "voucher": [
+            {
+              "code": "QWDAS",
+              "company": "FPT"
+            },
+            {
+              "code": "QWEACASQW",
+              "company": "CMC"
+            }
+          ],
+          "percent": "45"
+        }
+      ],
+      "madeIn": "UK"
+    },
+    {
+      "id": 5,
+      "food": "Grape",
+      "amount": 99,
+      "madeIn": "JAV",
+      "promotion": [
+        {
+          "voucher": [
+            {
+              "code": "QWDAS",
+              "company": "FPT"
+            },
+            {
+              "code": "QWEACASQW",
+              "company": "CMC"
+            }
+          ],
+          "percent": "50"
+        },
+        {
+          "voucher": [
+            {
+              "code": "QWDAS",
+              "company": "FPT"
+            }
+          ],
+          "percent": "45"
+        }
+      ],
+      "foodCategory": "Fruit"
+    },
+    {
+      "id": 6,
+      "food": "Banana",
+      "foodCategory": "Fruit",
+      "promotion": [
+        {
+          "voucher": [
+            {
+              "code": "QWDAS",
+              "company": "FPT"
+            },
+            {
+              "code": "QWEACASQW",
+              "company": "CMC"
+            }
+          ],
+          "percent": "50"
+        },
+        {
+          "voucher": [
+            {
+              "code": "QWDAS",
+              "company": "FPT"
+            },
+            {
+              "code": "QWEACASQW",
+              "company": "CMC"
+            }
+          ],
+          "percent": "45"
+        }
+      ],
+      "amount": 999,
+      "madeIn": "Korea"
+    },
+    {
+      "id": 7,
+      "food": "Coca cola",
+      "foodCategory": "Drink",
+      "promotion": [
+        {
+          "voucher": [
+            {
+              "code": "QWDAS",
+              "company": "FPT"
+            },
+            {
+              "code": "QWEACASQW",
+              "company": "CMC"
+            }
+          ],
+          "percent": "50"
+        },
+        {
+          "voucher": [
+            {
+              "code": "QWDAS",
+              "company": "FPT"
+            },
+            {
+              "code": "QWEACASQW",
+              "company": "CMC"
+            }
+          ],
+          "percent": "45"
+        }
+      ],
+      "amount": 100,
+      "madeIn": "Vietnam"
+    },
+    {
+      "food": "Chicken",
+      "foodCategory": "Meat",
+      "amount": 100,
+      "madeIn": "Korea",
+      "promotion": [
+        {
+          "voucher": [
+            {
+              "code": "QWDAS",
+              "company": "FPT"
+            },
+            {
+              "code": "QWEACASQW",
+              "company": "CMC"
+            }
+          ],
+          "percent": "50"
+        },
+        {
+          "voucher": [
+            {
+              "code": "QWDAS",
+              "company": "FPT"
+            },
+            {
+              "code": "QWEACASQW",
+              "company": "CMC"
+            }
+          ],
+          "percent": "45"
+        }
+      ],
+      "id": 9
+    },
+    {
+      "id": 11,
+      "food": "Milk tea",
+      "foodCategory": "Drink",
+      "amount": 123,
+      "madeIn": "Vietnam",
+      "promotion": [
+        {
+          "voucher": [
+            {
+              "code": "QWDAS",
+              "company": "FPT"
+            },
+            {
+              "code": "QWEACASQW",
+              "company": "CMC"
+            }
+          ],
+          "percent": "50"
+        },
+        {
+          "voucher": [
+            {
+              "code": "QWDAS",
+              "company": "FPT"
+            },
+            {
+              "code": "QWEACASQW",
+              "company": "CMC"
+            }
+          ],
+          "percent": "15"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "food": "123",
+      "foodCategory": "Meat",
+      "amount": 123,
+      "madeIn": "123",
+      "promotion": [
+        {
+          "voucher": [
+            {
+              "code": "123",
+              "company": "123"
+            }
+          ],
+          "percent": "123"
+        }
+      ]
+    }
+  ]
+}

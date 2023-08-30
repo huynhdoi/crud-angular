@@ -1,0 +1,166 @@
+<div class="container-fluid pb-3">
+    <div class="row align-items-center justify-content-center py-3">
+        <h2 class="m-0">{{'CRUD.TITLE' | translate}}</h2>
+    </div>
+
+    <form [formGroup]="form" (ngSubmit)="onFormSubmit()" class="row justify-content-center pt-4">
+
+        <div class="row align-items-center col-12 col-sm-6 col-md-6 col-lg-6 px-0 px-sm-5">
+            <div class="col-5 col-sm-3">
+                <div>{{'CRUD.FOOD_CATEGORY' | translate}}
+                    <span style="color: red">*</span>
+                    <span>:</span>
+                </div>
+            </div>
+            <div class="col-7 col-sm-9">
+                <select class="form-select" aria-label="Default select example" formControlName="foodCategory"
+                    [ngClass]="{ 'is-invalid':
+                (form.controls['foodCategory'].touched &&
+                form.controls['foodCategory'].hasError('required')) 
+            }">
+                    <option *ngFor="let cate of listCategoryFood" [value]="cate">{{cate}}</option>
+                </select>
+                <small class=" invalid-feedback" *ngIf="form.controls['foodCategory'].hasError('required')">
+                    {{ "COMMON.ERRORS.ERR_MSG_REQUIRED" | translate : { field: "CRUD.FOOD_CATEGORY" | translate } }}
+                </small>
+            </div>
+        </div>
+
+        <div class="row align-items-center col-12 col-sm-6 col-md-6 col-lg-6 px-0 px-sm-5 mt-4 mt-sm-0">
+            <div class="col-5 col-sm-3">
+                <div>{{'CRUD.FOOD_NAME' | translate}}
+                    <span style="color: red">*</span>
+                    <span>:</span>
+                </div>
+            </div>
+            <div class="col-7 col-sm-9">
+                <input class="form-control fh-px-40" type="text" formControlName="foodName" placeholder="" [ngClass]="{ 'is-invalid':
+                      (form.controls['foodName'].touched &&
+                      form.controls['foodName'].hasError('required')) ||
+                      form.controls['foodName'].hasError('maxlength')
+                  }" />
+                <small class="invalid-feedback" *ngIf="form.controls['foodName'].hasError('required') ">
+                    {{ "COMMON.ERRORS.ERR_MSG_REQUIRED" | translate : { field: "CRUD.FOOD_NAME" | translate } }}
+                </small>
+            </div>
+        </div>
+
+        <div class="row align-items-center col-12 col-sm-6 col-md-6 col-lg-6 px-0 px-sm-5 mt-4">
+            <div class="col-5 col-sm-3">
+                <div>{{'CRUD.FOOD_AMOUNT' | translate}}
+                    <span style="color: red">*</span>
+                    <span>:</span>
+                </div>
+            </div>
+            <div class="col-7 col-sm-9">
+                <input class="form-control fh-px-40" type="number" formControlName="amount" placeholder="" [ngClass]="{ 'is-invalid':
+                      (form.controls['amount'].touched &&
+                      form.controls['amount'].hasError('required')) 
+                  }" />
+                <small class="invalid-feedback" *ngIf="form.controls['amount'].hasError('required') ">
+                    {{ "COMMON.ERRORS.ERR_MSG_REQUIRED" | translate : { field: "CRUD.FOOD_AMOUNT" | translate } }}
+                </small>
+            </div>
+        </div>
+
+        <div class="row align-items-center col-12 col-sm-6 col-md-6 col-lg-6 px-0 px-sm-5 mt-4">
+            <div class="col-5 col-sm-3">
+                <div>{{'CRUD.FOOD_MADE_IN' | translate}}
+                    <span style="color: red">*</span>
+                    <span>:</span>
+                </div>
+            </div>
+            <div class="col-7 col-sm-9">
+                <input class="form-control fh-px-40" type="text" formControlName="madeIn" placeholder="" [ngClass]="{ 'is-invalid':
+                      (form.controls['madeIn'].touched &&
+                      form.controls['madeIn'].hasError('required')) ||
+                      form.controls['madeIn'].hasError('maxlength')
+                  }" />
+                <small class="invalid-feedback" *ngIf="form.controls['madeIn'].hasError('required') ">
+                    {{ "COMMON.ERRORS.ERR_MSG_REQUIRED" | translate : { field: "CRUD.FOOD_MADE_IN" | translate } }}
+                </small>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-10 mx-auto mt-5">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col" style="width: 70%" class="text-center">Voucher</th>
+                            <th scope="col" style="width: 15%" class="text-center">%</th>
+                            <th scope="col" style="width: 15%" class="text-center">
+                                <button class="btn btn-success btn-sm" (click)="addItem()" type="button">Add</button>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody formArrayName="promotionTable">
+                        <ng-container *ngFor="let item of promotionTableControl()?.controls;let i = index">
+                            <tr [formGroupName]="i">
+                                <td formArrayName="voucher" class="d-flex flex-wrap">
+                                    <div class="col-10">
+                                        <div
+                                            *ngFor="let itemDetail of promotionDetailControl(item)?.controls; let indexDetail = index">
+                                            <div class="d-flex my-1" [formGroupName]="indexDetail">
+                                                <div class="col-5">
+                                                    <input type="text" class="form-control " placeholder="Code"
+                                                        formControlName="code" [ngClass]="{ 'is-invalid':
+                                                    (itemDetail.get('code')?.touched &&
+                                                    itemDetail.get('code')?.hasError('required'))}" />
+                                                    <small class="invalid-feedback float-start"
+                                                        *ngIf="itemDetail.get('code')?.hasError('required') ">
+                                                        {{ "COMMON.ERRORS.ERR_MSG_REQUIRED" | translate : { field:
+                                                        "CRUD.FOOF_VOUCHER_PERCENT" | translate } }}
+                                                    </small>
+                                                </div>
+                                                <div class="col-5 mx-3">
+                                                    <input type="text" class="form-control" placeholder="Company"
+                                                        formControlName="company" [ngClass]="{ 'is-invalid':
+                                                    (itemDetail.get('company')?.touched &&
+                                                    itemDetail.get('company')?.hasError('required'))}" />
+                                                    <small class="invalid-feedback"
+                                                        *ngIf="itemDetail.get('company')?.hasError('required') ">
+                                                        {{ "COMMON.ERRORS.ERR_MSG_REQUIRED" | translate : { field:
+                                                        "CRUD.FOOF_VOUCHER_PERCENT" | translate } }}
+                                                    </small>
+                                                </div>
+                                                {{ console.log(promotionDetailControl(item).controls.length)}}
+                                                <div class="col-2 m-auto text-center">
+                                                    <button class="btn btn-warning " [disabled] = "promotionDetailControl(item).controls.length === 1 "
+                                                    (click)="removePromotionDetailRow(indexDetail,item)"
+                                                    type="button">X</button>
+                                                </div>                                              
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 m-auto text-center">
+                                        <button class="btn btn-info " (click)="addPromotionDetailItem(item)"
+                                            type="button">Add</button>
+                                    </div>
+                                </td>
+                                <td style="vertical-align: middle">
+                                    <input type="text" formControlName="percent" class="form-control" [ngClass]="{ 'is-invalid':
+                                (item.get('percent')?.touched && item.get('percent')?.hasError('required'))}" />
+                                    <small class="invalid-feedback" *ngIf="item.get('percent')?.hasError('required') ">
+                                        {{ "COMMON.ERRORS.ERR_MSG_REQUIRED" | translate : { field:
+                                        "CRUD.FOOF_VOUCHER_PERCENT" | translate } }}
+                                    </small>
+                                </td>
+                                <td class="text-center" style="vertical-align: middle">
+                                    <button class="btn btn-danger" type="button" (click)="removeRow(i)" [disabled] = "promotionTableControl().controls.length === 1 ">X</button>
+                                </td>
+                            </tr>
+                        </ng-container>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center mt-5">
+            <button type="submit" class="btn btn-primary mx-4" [disabled]="!form.dirty">
+                {{'COMMON.BUTTON.BT_SAVE' | translate}}</button>
+            <button type="button" class="btn btn-secondary" (click)="location.back()">
+                {{'COMMON.BUTTON.BT_CANCEL'| translate}}</button>
+        </div>
+    </form>
+</div>

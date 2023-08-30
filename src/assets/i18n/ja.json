@@ -1,0 +1,20 @@
+{
+  "MENU": {
+    "CRUD": "CRUD Demo",
+    "LEARN_MORE": "Learn more"
+  },
+  "COMMON": {
+    "BUTTON": {
+      "BT_BACK": "bạck",
+      "BT_EDIT": "edit",
+      "BT_REGISTER": "add",
+      "BT_CLEAR": "clear"
+    },
+    "LABEL": {
+    },
+    "ERRORS": {
+    },
+    "PLACEHOLDER": {
+    }
+  }
+}

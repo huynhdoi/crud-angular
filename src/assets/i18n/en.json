@@ -1,0 +1,34 @@
+{
+  "MENU": {
+    "CRUD": "CRUD Demo",
+    "LEARN_MORE": "Learn more"
+  },
+  "COMMON": {
+    "BUTTON": {
+      "BT_BACK": "Back",
+      "BT_EDIT": "Edit",
+      "BT_REGISTER": "Add new food",
+      "BT_CLEAR": "Clear",
+      "BT_SAVE": "Save",
+      "BT_CANCEL": "Cancel",
+      "BT_LINK_CRUD": "link to crud component"
+    },
+    "LABEL": {
+    },
+    "ERRORS": {
+      "ERR_MSG_REQUIRED": "Please enter a required {{field}} "
+    },
+    "PLACEHOLDER": {
+    }
+  },
+  "CRUD": {
+    "TITLE": "Demo CRUD",
+    "HEADER": "Table CRUD",
+    "FOOD_NAME": "Field food name",
+    "FOOD_CATEGORY": "Field food category",
+    "FOOD_AMOUNT": "Field amount of food",
+    "FOOD_MADE_IN":"Field made in",
+    "FOOD_VOUCHER":"Field food voucher",
+    "FOOF_VOUCHER_PERCENT":"Field voucher percent"
+  }
+}
